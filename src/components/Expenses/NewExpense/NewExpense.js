@@ -5,9 +5,11 @@ import './NewExpense.css';
 const NewExpense = (props) => {
 
     const saveExpenseDataHandler = (enteredExpenseData) => {
+        console.log(enteredExpenseData.date)
         const expenseData = {
             ...enteredExpenseData,
-            id: 21
+            amount: +enteredExpenseData.amount,
+            id: enteredExpenseData.title
         }
         console.log("ExpenseData from NewExpense: ", expenseData)
         props.onAddExpense(expenseData);

@@ -16,6 +16,7 @@ const ExpenseForm = (props) => {
     }
 
     const dateChangeHandler = (event) => {
+        console.log(event.target.value)
         setEnteredDate(event.target.value);
     }
 
@@ -25,7 +26,7 @@ const ExpenseForm = (props) => {
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
-            date: new Date(enteredAmount)
+            date: new Date(enteredDate)
         }
         console.log("PROPS from exprenseForm: ", props)
         console.log("Expense Data from ExpenseForm:", expenseData)
@@ -36,7 +37,7 @@ const ExpenseForm = (props) => {
         setEntereAmount('');
         setEnteredDate('');
     }
-    console.log("RIFRESZ")
+    // console.log("RIFRESZ")
     return (
         <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
