@@ -6,13 +6,11 @@ const NewExpense = (props) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
-    console.log(enteredExpenseData.date);
     const expenseData = {
       ...enteredExpenseData,
       amount: +enteredExpenseData.amount,
       id: enteredExpenseData.title,
     };
-    console.log("ExpenseData from NewExpense: ", expenseData);
     props.onAddExpense(expenseData);
   };
 
